@@ -1,0 +1,25 @@
+fileFormatVersion: 2
+guid: 686c3c3632445df409aff25f8a05de88
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: cc34d0f3dc257a442819830b408c5322, type: 3}
+  missingFiles:
+  - ../Metroidvania Assets/Art/Ansimuz/Warped/environment/layers/tilesets.png
+  errors:
+  - 'Missing texture asset: ../Metroidvania Assets/Art/Ansimuz/Warped/environment/layers/tilesets.png'
+  warnings: []
+  missingSortingLayers: []
+  missingLayers: []
+  missingTags: []
+  importerVersion: 13
+  pixelsPerUnit: 16
+  edgesPerEllipse: 16
+  numberOfObjectsImported: 2
+  useSpriteAtlas: 1
+  atlasWidth: 2048
+  atlasHeight: 2048
