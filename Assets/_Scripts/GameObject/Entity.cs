@@ -5,16 +5,30 @@ using UnityEngine;
 public class Entity : MonoBehaviour
 {
     [Header("Collision info")]
+    public Transform attackCheck;
+    public float attackCheckRadius;
     [SerializeField] protected Transform groundCheck;
     [SerializeField] protected float groundCheckDistance;
     [SerializeField] protected Transform wallCheck;
     [SerializeField] protected float wallCheckDistance;
     [SerializeField] protected LayerMask whatIsGround;
 
+    [Header("Knockback info")]
+    [SerializeField] protected Vector2 knockbackDir;
+    protected bool isKnocked;
+    [SerializeField] float knockbackDuration;
+
+    public CharacterStats CharacterStats { get; private set; }
+
+
     [Header("Shot info")]
     public float shotDuration;
     [SerializeField] protected ArrowController shotToFire;
     [SerializeField] protected Transform shotPoint;
+    [SerializeField] protected ArrowController chargedShot;
+    [SerializeField] public float chargeSpeed;
+    [SerializeField] public float chargeTime;
+    [SerializeField] public bool isCharging;
 
     public int facingDir { get; set; } = 1;
     protected bool facingRight = true;
@@ -22,6 +36,7 @@ public class Entity : MonoBehaviour
     #region Components
     public Animator anim { get; private set; }
     public Rigidbody2D rb { get; private set; }
+    public CharacterStats stats { get; private set; }
 
     #endregion
 
@@ -34,11 +49,27 @@ public class Entity : MonoBehaviour
     {
         anim = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        CharacterStats = GetComponent<CharacterStats>();
+        stats = GetComponent<CharacterStats>();
     }
 
     protected virtual void Update()
     {
 
+    }
+
+    public void Damage()
+    {
+        Debug.Log(gameObject.name + " foi atingido!"); 
+        StartCoroutine("HitKnockback");
+    }
+
+    protected virtual IEnumerator HitKnockback()
+    {
+        isKnocked = true;
+        rb.velocity = new Vector2(knockbackDir.x * -facingDir, knockbackDir.y);
+        yield return new WaitForSeconds(knockbackDuration);
+        isKnocked = false;
     }
 
     #region Collision
@@ -49,6 +80,7 @@ public class Entity : MonoBehaviour
     {
         Gizmos.DrawLine(groundCheck.position, new Vector3(groundCheck.position.x, groundCheck.position.y - groundCheckDistance));
         Gizmos.DrawLine(wallCheck.position, new Vector3(wallCheck.position.x + wallCheckDistance, wallCheck.position.y));
+        Gizmos.DrawWireSphere(attackCheck.position, attackCheckRadius);
     }
     #endregion
 
@@ -73,34 +105,28 @@ public class Entity : MonoBehaviour
     }
     #endregion
 
-    #region Shot
-
-    public void FireProjectile()
-    {
-        if (!facingRight)
-        {
-            shotToFire.transform.localScale = new Vector3(-1f, 1f, 1f);
-        }
-        else
-        {
-            shotToFire.transform.localScale = Vector3.one;
-        }
-
-        Instantiate(shotToFire, shotPoint.position, shotPoint.rotation).moveDir =
-            new Vector2(transform.localScale.x, 0f);
-    }
-
-    #endregion
-
     #region Velocity
-    public virtual void ZeroVelocity() => rb.velocity = new Vector2(0, 0);
+    public virtual void SetZeroVelocity()
+    {
+        if (isKnocked) 
+            return;
+
+        rb.velocity = new Vector2(0, 0);
+    }
 
     public virtual void SetVelocity(float _xVelocity, float _yVelocity)
     {
+        if (isKnocked)
+            return;
 
         rb.velocity = new Vector2(_xVelocity, _yVelocity);
         FlipController(_xVelocity);
     }
 
     #endregion
+
+    public virtual void Die()
+    {
+
+    }
 }

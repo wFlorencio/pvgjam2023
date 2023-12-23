@@ -11,7 +11,7 @@ public class PlayerAirState : PlayerState
     public override void Enter()
     {
         base.Enter();
-
+        player.canDoubleJump = true;
     }
 
     public override void Exit()
@@ -30,17 +30,15 @@ public class PlayerAirState : PlayerState
             stateMachine.ChangeState(player.IdleState);
 
         if (xInput != 0)
-            player.SetVelocity(player.moveSpeed * .8f * xInput, rb.velocity.y);
-
-        if(Input.GetKeyDown(KeyCode.Space) && player.canDoubleJump && player.abilities.canDoubleJump)
-        {
-            stateMachine.ChangeState(player.JumpState);
-            player.canDoubleJump = false;
-        }
+            player.SetVelocity(player.moveSpeed * 1f * xInput, rb.velocity.y);
 
         if (Input.GetKeyDown(KeyCode.J))
             stateMachine.ChangeState(player.PrimaryAttack);
 
-
+        if (Input.GetKeyDown(KeyCode.Space) && player.canDoubleJump && player.abilities.canDoubleJump)
+        {
+            player.canDoubleJump = false;
+            rb.velocity = new Vector2(rb.velocity.x, 15);
+        }
     }
 }

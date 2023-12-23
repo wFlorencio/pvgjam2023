@@ -31,6 +31,6 @@ public class PlayerShotState : PlayerState
             stateMachine.ChangeState(player.IdleState);
         }
 
-        player.ZeroVelocity();
+        player.SetZeroVelocity();
     }
 }

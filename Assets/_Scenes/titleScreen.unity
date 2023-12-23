@@ -182,8 +182,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Sair
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2375399590a78904aa06f7830963e268, type: 2}
-  m_sharedMaterial: {fileID: 5291508283845953113, guid: 2375399590a78904aa06f7830963e268, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -314,7 +314,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ca7b4d7a8f57c454c8ff1e5a3baab325, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f309182c6967e5f4691f077b15c23ce6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -358,7 +358,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 244065126}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9be1ecbbff87884ea6e7bfd3c9f827b, type: 3}
+  m_Script: {fileID: 11500000, guid: e0fa6dbd19101af4db5c5e4abebc6aba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pressEnterText: {fileID: 362372085}
@@ -447,8 +447,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Aperte Enter
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2375399590a78904aa06f7830963e268, type: 2}
-  m_sharedMaterial: {fileID: 5291508283845953113, guid: 2375399590a78904aa06f7830963e268, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -704,8 +704,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2375399590a78904aa06f7830963e268, type: 2}
-  m_sharedMaterial: {fileID: 5291508283845953113, guid: 2375399590a78904aa06f7830963e268, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1064,8 +1064,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Configura\xE7\xF5es"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2375399590a78904aa06f7830963e268, type: 2}
-  m_sharedMaterial: {fileID: 5291508283845953113, guid: 2375399590a78904aa06f7830963e268, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1598,14 +1598,14 @@ RectTransform:
   m_GameObject: {fileID: 1576937624}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 12.304402, y: 8.579877, z: 8.579877}
+  m_LocalScale: {x: 13.755092, y: 9.591445, z: 9.591445}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1768888319}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 351, y: -12}
+  m_AnchoredPosition: {x: 366, y: -69}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1576937626
@@ -1628,7 +1628,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 3a5ac6da8b00cbc4e8b2ca678e2250f0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cd03808bb050c0540bb2ce2fd8b5f8a0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1706,8 +1706,8 @@ MonoBehaviour:
   m_text: "\nAdilson Silva - C\xF3digo\nWilliam Florencio - Arte\n\nPonto e V\xEDrgula
     GameJam 2023"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2375399590a78904aa06f7830963e268, type: 2}
-  m_sharedMaterial: {fileID: 5291508283845953113, guid: 2375399590a78904aa06f7830963e268, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2024,8 +2024,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Versao 0.0.0
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2375399590a78904aa06f7830963e268, type: 2}
-  m_sharedMaterial: {fileID: 5291508283845953113, guid: 2375399590a78904aa06f7830963e268, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

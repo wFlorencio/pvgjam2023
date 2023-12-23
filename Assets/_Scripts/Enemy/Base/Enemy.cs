@@ -10,6 +10,13 @@ public class Enemy : Entity
     [Header("Move Info")]
     [SerializeField] public float moveSpeed;
     [SerializeField] public float idleTime;
+    public float battleTime;
+
+    [Header("Attack Info")]
+    public float attackDistance;
+    public float attackCoolDown;
+    [HideInInspector] public float lastTimeAttacked;
+
 
     public EnemyStateMachine stateMachine { get; private set; }
 
@@ -25,5 +32,15 @@ public class Enemy : Entity
         stateMachine.CurrentState.Update();
     }
 
-    public virtual RaycastHit2D IsPlayerDetected() => Physics2D.Raycast(wallCheck.position, Vector2.right * facingDir, 50, whatIsPlayer);
+    public virtual RaycastHit2D IsPlayerDetected() => Physics2D.Raycast(wallCheck.position, Vector2.right * facingDir, 3, whatIsPlayer);
+
+    public virtual void AnimationFinishTrigger() => stateMachine.CurrentState.AnimationFinishTrigger();
+
+    protected override void OnDrawGizmos()
+    {
+        base.OnDrawGizmos(); 
+
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawLine(transform.position, new Vector3(transform.position.x + attackDistance * facingDir, transform.position.y));
+    }
 }
