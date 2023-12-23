@@ -13,6 +13,7 @@ public class titleScreen : MonoBehaviour
     public  Color currentColor = new Color(0, 0, 0, 1);
     public float fadeInDuration = 2f, fadeOutDuration = 1.3f, blinkInterval = 0.5f;
     bool blinkingStarted = false;
+    public string NomeDaCena = "Start";
     
     void Awake()
     {
@@ -116,7 +117,7 @@ public class titleScreen : MonoBehaviour
         currentColor.a = 1;
         fadePanel.color = currentColor;
 
-        SceneManager.LoadScene("Start");
+        SceneManager.LoadScene(NomeDaCena);
     }
 
     void QuitGame()

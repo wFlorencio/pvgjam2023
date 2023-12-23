@@ -373,6 +373,7 @@ MonoBehaviour:
   fadeInDuration: 2
   fadeOutDuration: 1.3
   blinkInterval: 0.5
+  NomeDaCena: Prototipo
 --- !u!4 &244065128
 Transform:
   m_ObjectHideFlags: 0

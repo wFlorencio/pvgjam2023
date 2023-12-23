@@ -1,12 +1,40 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    [Header("POWER-UPS")]
+
+/*
+    [Header("ELEMENTOS DO PERSONAGEM")]
+    [SerializeField] public GameObject multitool;
+    [SerializeField] public GameObject baioneta;
+    [SerializeField] public GameObject loader;
+    [SerializeField] public GameObject ponteiro;
+    [SerializeField] public GameObject chave;
+*/
+
+    [Header("ELEMENTOS DE JOGO")]
+    [SerializeField] private int enemyCounter = 0;
+    [SerializeField] private int enemyTotal = 30;
+    [SerializeField] private int signatureCounter = 0; //6
+    [SerializeField] private int signatureTotal = 10; //6
+    [SerializeField] private bool IsGameOver = false; 
+
+
+    [Header("ELEMENTOS DA GUI")]
+    [SerializeField] public TextMeshProUGUI temporizador;
+    [SerializeField] public TextMeshProUGUI robot_count;
+    [SerializeField] public TextMeshProUGUI key_count;
+    [SerializeField] public float timer;
+    [SerializeField] public GameObject gameOverScreen;
+    
+
+
+    [Header("POWER-UPS (bool)")]
     [SerializeField] private bool powerUp_jump = false; //1
     [SerializeField] private bool powerUp_super_jump = false; //2
 
@@ -15,24 +43,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private bool powerUp_multitool_loader = false; //5
     [SerializeField] private bool powerUp_multitool_bayoneta = false; //6
 
-    [Header("ELEMENTOS DO PERSONAGEM")]
-    [SerializeField] public GameObject multitool;
-    [SerializeField] public GameObject baioneta;
-    [SerializeField] public GameObject loader;
-    [SerializeField] public GameObject ponteiro;
-    [SerializeField] public GameObject chave;
-
-    [Header("ELEMENTOS DE CENA")]
-    [SerializeField] public TextMeshProUGUI temporizador;
-    [SerializeField] public float timer;
     
     void Awake()
     {
-        multitool.SetActive(powerUp_multitool);
-        baioneta.SetActive(powerUp_multitool_bayoneta);
-        loader.SetActive(powerUp_multitool_loader);
-        ponteiro.SetActive(powerUp_multitool_loader);
-        chave.SetActive(powerUp_multitool_key);
+
     }
 
     void Start()
@@ -46,6 +60,112 @@ public class GameManager : MonoBehaviour
         timer = Mathf.Max(timer - Time.deltaTime, 0.0f);
         string tempoFormatado = FormatTime(timer);
         temporizador.text = tempoFormatado;
+
+        //Verificador De GameOver
+        //if (timer <= 0.0f || "algum robô for destruído" )
+        if (timer <= 0.0f)
+        {
+            GameOver();
+        }
+        
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            if(IsGameOver)
+            {
+                ResetStage();
+            }
+        }
+
+        //COMANDOS PARA DEBUG
+        //f1 - JUMP
+        if (Input.GetKeyDown(KeyCode.F1))
+        {
+            if(!powerUp_jump)
+            {
+                powerUp_jump = true;
+                Debug.Log("Salto Ativo");
+            }
+            else
+            {
+                powerUp_jump = false;
+                Debug.Log("Salto  Desativado");
+            }
+        }
+
+        //f2 - SUPER JUMP
+        if (Input.GetKeyDown(KeyCode.F2))
+        {
+            if(!powerUp_super_jump)
+            {
+                powerUp_super_jump = true;
+                Debug.Log("Super Salto Ativo");
+            }
+            else
+            {
+                powerUp_super_jump = false;
+                Debug.Log("Super Salto Desativo");
+            }
+        }
+
+        //f3 - ARMA
+        if (Input.GetKeyDown(KeyCode.F3))
+        {
+            if(!powerUp_multitool)
+            {
+                powerUp_multitool = true;
+                Debug.Log("MultiTool Ativa");
+            }
+            else
+            {
+                powerUp_multitool = false;
+                Debug.Log("MultiTool Desativa");
+            }
+        }
+
+        // f4 - ASSINATURA
+        if (Input.GetKeyDown(KeyCode.F4))
+        {
+            if(powerUp_multitool_key == false)
+            {
+                powerUp_multitool_key = true;
+                Debug.Log("Assinatura Ativa");
+            }
+            else
+            {
+                powerUp_multitool_key = false;
+                Debug.Log("Assinatura Desativa");
+            }
+        }
+
+        // F5 - CARREGADOR
+        if (Input.GetKeyDown(KeyCode.F5))
+        {
+           if(powerUp_multitool_loader == false)
+            {
+                powerUp_multitool_loader = true;
+                Debug.Log("Carregador Ativo");
+            }
+            else
+            {
+                powerUp_multitool_loader = false;
+                Debug.Log("Carregador Desativo");
+            }
+        }
+
+        // F6 - BAIONETA
+        if (Input.GetKeyDown(KeyCode.F6))
+        {
+            if(powerUp_multitool_bayoneta == false)
+            {
+                powerUp_multitool_bayoneta = true;
+                Debug.Log("Baioneta Ativa");
+            }
+            else
+            {
+                powerUp_multitool_bayoneta = false;
+                Debug.Log("Baioneta Desativa");
+            }
+        }
         
     }
 
@@ -66,8 +186,21 @@ public class GameManager : MonoBehaviour
         return string.Format("{0:00}.{1:00}.{2:00}", minutos, segundos, milissegundos);
     }
 
+    private void GameOver()
+    {
+        IsGameOver = true;
+        Time.timeScale =  0;
+        gameOverScreen.SetActive(true);
+    }
+
+    private void ResetStage()
+    {
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentSceneIndex);
+    }
 
 
+//useless
     public void GetPowerUp(int type)
     {
         switch (type)
@@ -99,9 +232,6 @@ public class GameManager : MonoBehaviour
             default:
                 break;
         }
-    
 
-        //Toca musiquinha de triunfo
-        //Spawna janela com texto explicativo
     }
 }
