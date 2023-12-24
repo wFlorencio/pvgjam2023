@@ -6,24 +6,24 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_SCENES/1 titulo.unity
+    path: Assets/_SCENES/0 titulo.unity
     guid: 74d17c63edbe87b40a6c37ad5f65f70f
   - enabled: 1
     path: Assets/_SCENES/Intro.unity
     guid: 9f192af9ddb4f9c45b7c9142f4c36875
   - enabled: 1
-    path: Assets/_SCENES/rooms/level1.unity
+    path: Assets/_SCENES/level1.unity
     guid: b4621591f642c3040a050bf29b76c4d1
   - enabled: 1
-    path: Assets/_SCENES/rooms/level2.unity
+    path: Assets/_SCENES/level2.unity
     guid: d2d93f706f2d8b34b95920a839624565
   - enabled: 1
-    path: Assets/_SCENES/rooms/level3.unity
+    path: Assets/_SCENES/level3.unity
     guid: 962fe953bd30b1f41b7f7032870b90c4
   - enabled: 1
-    path: Assets/_SCENES/rooms/level4.unity
+    path: Assets/_SCENES/level4.unity
     guid: 5a4a599cd1663e94d94008ced56302ed
   - enabled: 1
-    path: Assets/_SCENES/rooms/level5.unity
+    path: Assets/_SCENES/level5.unity
     guid: fb26598dbc744c04a967a6a9c2d79feb
   m_configObjects: {}

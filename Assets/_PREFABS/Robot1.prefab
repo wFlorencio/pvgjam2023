@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1623148420920018905}
   - component: {fileID: 7767539369256852165}
+  - component: {fileID: 3021024050928034961}
   - component: {fileID: 5902294724064706156}
   - component: {fileID: 1605666431298663842}
-  - component: {fileID: 3021024050928034961}
   m_Layer: 8
   m_Name: Robot1
   m_TagString: Enemy
@@ -59,7 +59,7 @@ MonoBehaviour:
   wallCheckDistance: 0.8
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   knockbackDir: {x: 7, y: 12}
   knockbackDuration: 0.07
   shotDuration: 0
@@ -71,13 +71,29 @@ MonoBehaviour:
   isCharging: 0
   whatIsPlayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   moveSpeed: 2
   idleTime: 1
   battleTime: 7
   attackDistance: 1.5
   attackCoolDown: 0.4
   lastTimeAttacked: 0
+--- !u!114 &3021024050928034961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 243133574871806387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfddc5ef3c304914c872b1e4f3e06d27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
+  maxHealth: 100
+  isDead: 0
+  currentHealth: 0
 --- !u!50 &5902294724064706156
 Rigidbody2D:
   serializedVersion: 4
@@ -150,22 +166,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.0496025, y: 2.9840832}
   m_EdgeRadius: 0
---- !u!114 &3021024050928034961
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 243133574871806387}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dfddc5ef3c304914c872b1e4f3e06d27, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 10
-  maxHealth: 100
-  isDead: 0
-  currentHealth: 0
 --- !u!1 &343463301179156992
 GameObject:
   m_ObjectHideFlags: 0

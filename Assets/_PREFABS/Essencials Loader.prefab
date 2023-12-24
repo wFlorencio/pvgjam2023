@@ -24,12 +24,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4615226408124540697}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6077749871241781235
 MonoBehaviour:
@@ -43,11 +44,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7301656992aeec4a951dc88f814b2d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UIScreen: {fileID: 5160093153240995731, guid: 4c72e54b6dd819c439af25aca1d2cce7,
-    type: 3}
-  player: {fileID: 2708064740369986722, guid: 330cf1d1d9dfd3e4ca65d2122b6627f4, type: 3}
-  gameMan: {fileID: 2779280015046852865, guid: 226daab1abafb5048a46c388aced8a6b, type: 3}
-  audioMan: {fileID: 1791311747529000915, guid: 77a959b13d15c2d49985d297e668165e,
-    type: 3}
-  dialogueMan: {fileID: 3889179201421108797, guid: 01571719a6ecaab468c2d793f084d1f2,
-    type: 3}
+  player: {fileID: 3903958563065389431, guid: 0f7b7c228cd80f4469c7f2a93fa72450, type: 3}
