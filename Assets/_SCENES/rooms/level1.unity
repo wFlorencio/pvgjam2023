@@ -523,7 +523,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8012731300354687453, guid: 887d7badbfe14594494ed6e786c354f6, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -8012731300354687453, guid: 887d7badbfe14594494ed6e786c354f6, type: 3}
       propertyPath: m_IsActive
@@ -662,7 +662,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5839685018158905626, guid: 41de793b7ad5a9b48b9a1341013cc117, type: 3}
       propertyPath: whatIsGround.m_Bits
-      value: 1
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6079034266401969875, guid: 41de793b7ad5a9b48b9a1341013cc117, type: 3}
       propertyPath: m_LocalScale.x

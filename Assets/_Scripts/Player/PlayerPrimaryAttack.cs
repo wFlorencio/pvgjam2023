@@ -23,13 +23,9 @@ public class PlayerPrimaryAttackState : PlayerState
         if (comboCounter > 2 || Time.time >= lastTimeAttacked + comboWindow)
             comboCounter = 0;
 
-        if (player.abilities.canGiveCombo && player.IsGroundDetected())
+        if (player.IsGroundDetected())
         {
-            player.anim.SetInteger("ComboCounter", comboCounter);
-        }
-        else
-        {
-            player.anim.SetInteger("ComboCounter", 1);
+            player.anim.SetInteger("ComboCounter", 0);
         }
         
 
