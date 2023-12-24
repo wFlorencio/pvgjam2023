@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6085977771364573733
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 788596146315018165}
+  - component: {fileID: 3256472257331037450}
+  m_Layer: 0
+  m_Name: GAME_MANAGER
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &788596146315018165
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6085977771364573733}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -31.023668, y: 0.9381887, z: -9.966366}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3256472257331037450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6085977771364573733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 672162d94e6e8254e8f6e9cc1a88a606, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyCounter: 0
+  enemyTotal: 30
+  signatureCounter: 0
+  signatureTotal: 10
+  IsGameOver: 0
+  temporizador: {fileID: 0}
+  robot_count: {fileID: 0}
+  key_count: {fileID: 0}
+  timer: 0
+  gameOverScreen: {fileID: 0}
+  powerUp_jump: 0
+  powerUp_super_jump: 0
+  powerUp_multitool: 0
+  powerUp_multitool_key: 0
+  powerUp_multitool_loader: 0
+  powerUp_multitool_bayoneta: 0

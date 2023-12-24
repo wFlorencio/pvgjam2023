@@ -44,14 +44,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] private bool powerUp_multitool_bayoneta = false; //6
 
     
-    void Awake()
-    {
-
-    }
-
     void Start()
     {
         timer = 60.0f;
+        UpdateRobotCounter();
+        UpdateKeyCounter();
     }
 
     void Update()
@@ -174,6 +171,18 @@ public class GameManager : MonoBehaviour
         timer = Mathf.Max(timer - Time.deltaTime, 0.0f);
         string tempoFormatado = FormatTime(timer);
         temporizador.text = tempoFormatado;
+    }
+
+    private void UpdateKeyCounter()
+    {
+        string valorx = " " + signatureCounter + "/" + signatureTotal + " ";
+        key_count.text = valorx;
+    }
+
+    private void UpdateRobotCounter()
+    {
+        string valory = " " + enemyCounter + "/" + enemyTotal + " ";
+        robot_count.text = valory;
     }
 
     string FormatTime(float tempo)

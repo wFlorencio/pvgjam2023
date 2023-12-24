@@ -20,12 +20,12 @@ public class Player : Entity
     public bool isJumping;
 
 
-    [Header("Dash info")]
-    [SerializeField] private float dashCooldown;
-    private float dashUsageTimer;
-    public float dashSpeed;
-    public float dashDuration;
-    public float dashDir { get; private set; }
+    //[Header("Dash info")]
+    //[SerializeField] private float dashCooldown;
+    //private float dashUsageTimer;
+    //public float dashSpeed;
+    //public float dashDuration;
+    //public float dashDir { get; private set; }
 
     
     public PlayerAbilityTracker abilities;
@@ -45,7 +45,7 @@ public class Player : Entity
     public PlayerAirState AirState { get; private set; }
     public PlayerWallSlideState WallSlide { get; private set; }
     public PlayerWallJumpState WallJump { get; private set; }
-    public PlayerDashState DashState { get; private set; }
+    //public PlayerDashState DashState { get; private set; }
     public PlayerShotState ShotState { get; private set; }
     public PlayerPrimaryAttackState PrimaryAttack { get; private set; }
 
@@ -72,7 +72,7 @@ public class Player : Entity
         MoveState = new PlayerMoveState(this, StateMachine, "Move");
         JumpState = new PlayerJumpState(this, StateMachine, "Jump");
         AirState = new PlayerAirState(this, StateMachine, "Jump");
-        DashState = new PlayerDashState(this, StateMachine, "Dash");
+        //DashState = new PlayerDashState(this, StateMachine, "Dash");
         WallSlide = new PlayerWallSlideState(this, StateMachine, "WallSlide");
         WallJump = new PlayerWallJumpState(this, StateMachine, "Jump");
         ShotState = new PlayerShotState(this, StateMachine, "Shot");
@@ -94,7 +94,7 @@ public class Player : Entity
     {
         base.Update();
         StateMachine.CurrentState.Update();
-        CheckForDashInput();
+        //CheckForDashInput();
 
         // Debug.Log(StateMachine.CurrentState);
     }
@@ -110,6 +110,7 @@ public class Player : Entity
     public void AnimationTrigger() => StateMachine.CurrentState.AnimationFinishTrigger();
     public void Fire() => this.FireProjectile();
 
+/*
     private void CheckForDashInput()
     {
         if (IsWallDetected())
@@ -130,6 +131,7 @@ public class Player : Entity
             StateMachine.ChangeState(DashState);
         }
     }
+    */
     public PlayerState GetPlayerState() => StateMachine.CurrentState;
 
     public void JumpButton()
