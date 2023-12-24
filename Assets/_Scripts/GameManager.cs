@@ -18,18 +18,21 @@ public class GameManager : MonoBehaviour
 */
 
     [Header("ELEMENTOS DE JOGO")]
+    [SerializeField] public float timer;
     [SerializeField] private int enemyCounter = 0;
     [SerializeField] private int enemyTotal = 30;
     [SerializeField] private int signatureCounter = 0; //6
     [SerializeField] private int signatureTotal = 10; //6
+    
     [SerializeField] private bool IsGameOver = false; 
+    
 
 
     [Header("ELEMENTOS DA GUI")]
     [SerializeField] public TextMeshProUGUI temporizador;
     [SerializeField] public TextMeshProUGUI robot_count;
     [SerializeField] public TextMeshProUGUI key_count;
-    [SerializeField] public float timer;
+    
     [SerializeField] public GameObject gameOverScreen;
     
 
@@ -46,7 +49,7 @@ public class GameManager : MonoBehaviour
     
     void Start()
     {
-        timer = 60.0f;
+        //timer = 60.0f;
         UpdateRobotCounter();
         UpdateKeyCounter();
     }
@@ -205,6 +208,10 @@ public class GameManager : MonoBehaviour
     private void ResetStage()
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        Time.timeScale =  1;
+        IsGameOver = false;
+        gameOverScreen.SetActive(false);
+        timer = 3.0f;
         SceneManager.LoadScene(currentSceneIndex);
     }
 
