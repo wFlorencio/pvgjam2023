@@ -18,19 +18,23 @@ public class GameManager : MonoBehaviour
 */
 
     [Header("ELEMENTOS DE JOGO")]
+    [SerializeField] public float timer;
     [SerializeField] private int enemyCounter = 0;
-    [SerializeField] private int enemyTotal = 30;
+    [SerializeField] private int enemyTotal = 29;
     [SerializeField] private int signatureCounter = 0; //6
     [SerializeField] private int signatureTotal = 10; //6
+    
     [SerializeField] private bool IsGameOver = false; 
+    
 
 
     [Header("ELEMENTOS DA GUI")]
     [SerializeField] public TextMeshProUGUI temporizador;
     [SerializeField] public TextMeshProUGUI robot_count;
     [SerializeField] public TextMeshProUGUI key_count;
-    [SerializeField] public float timer;
+    
     [SerializeField] public GameObject gameOverScreen;
+    [SerializeField] public GameObject endGameScreen;
     
 
 
@@ -46,7 +50,7 @@ public class GameManager : MonoBehaviour
     
     void Start()
     {
-        timer = 60.0f;
+        //timer = 60.0f;
         UpdateRobotCounter();
         UpdateKeyCounter();
     }
@@ -63,6 +67,11 @@ public class GameManager : MonoBehaviour
         if (timer <= 0.0f)
         {
             GameOver();
+        }
+
+        if(enemyCounter == enemyTotal || signatureCounter == signatureTotal)
+        {
+            EndGame();
         }
         
         if (Input.GetKeyDown(KeyCode.Return))
@@ -202,10 +211,21 @@ public class GameManager : MonoBehaviour
         gameOverScreen.SetActive(true);
     }
 
+    private void EndGame()
+    {
+        Time.timeScale =  0;
+        endGameScreen.SetActive(true);
+    }
+
     private void ResetStage()
     {
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene(currentSceneIndex);
+        //int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        Time.timeScale =  1;
+        IsGameOver = false;
+        gameOverScreen.SetActive(false);
+        timer = 3.0f;
+        //SceneManager.LoadScene(currentSceneIndex);
+        SceneManager.LoadScene("level1");
     }
 
 
