@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
     [Header("ELEMENTOS DE JOGO")]
     [SerializeField] public float timer;
     [SerializeField] private int enemyCounter = 0;
-    [SerializeField] private int enemyTotal = 30;
+    [SerializeField] private int enemyTotal = 29;
     [SerializeField] private int signatureCounter = 0; //6
     [SerializeField] private int signatureTotal = 10; //6
     
@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] public TextMeshProUGUI key_count;
     
     [SerializeField] public GameObject gameOverScreen;
+    [SerializeField] public GameObject endGameScreen;
     
 
 
@@ -66,6 +67,11 @@ public class GameManager : MonoBehaviour
         if (timer <= 0.0f)
         {
             GameOver();
+        }
+
+        if(enemyCounter == enemyTotal || signatureCounter == signatureTotal)
+        {
+            EndGame();
         }
         
         if (Input.GetKeyDown(KeyCode.Return))
@@ -203,6 +209,12 @@ public class GameManager : MonoBehaviour
         IsGameOver = true;
         Time.timeScale =  0;
         gameOverScreen.SetActive(true);
+    }
+
+    private void EndGame()
+    {
+        Time.timeScale =  0;
+        endGameScreen.SetActive(true);
     }
 
     private void ResetStage()

@@ -378,6 +378,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 2951712451315486981, guid: ff408040228ed0d41a7e24ea3300eaf4, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5799862884739834761, guid: ff408040228ed0d41a7e24ea3300eaf4, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -470,6 +474,11 @@ PrefabInstance:
 --- !u!224 &842250993 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7563358483717684805, guid: ff408040228ed0d41a7e24ea3300eaf4, type: 3}
+  m_PrefabInstance: {fileID: 842250992}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &842250994 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3008912466970166899, guid: ff408040228ed0d41a7e24ea3300eaf4, type: 3}
   m_PrefabInstance: {fileID: 842250992}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1213764219
@@ -1077,6 +1086,10 @@ PrefabInstance:
       propertyPath: temporizador
       value: 
       objectReference: {fileID: 1501727991}
+    - target: {fileID: 3256472257331037450, guid: 0bfed551a5728024a8274fd42d4f7a60, type: 3}
+      propertyPath: endGameScreen
+      value: 
+      objectReference: {fileID: 842250994}
     - target: {fileID: 3256472257331037450, guid: 0bfed551a5728024a8274fd42d4f7a60, type: 3}
       propertyPath: gameOverScreen
       value: 
