@@ -207,12 +207,13 @@ public class GameManager : MonoBehaviour
 
     private void ResetStage()
     {
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        //int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         Time.timeScale =  1;
         IsGameOver = false;
         gameOverScreen.SetActive(false);
         timer = 3.0f;
-        SceneManager.LoadScene(currentSceneIndex);
+        //SceneManager.LoadScene(currentSceneIndex);
+        SceneManager.LoadScene("level1");
     }
 
 
