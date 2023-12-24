@@ -17,28 +17,28 @@ public class Intro : MonoBehaviour
     }
 
  void Update()
-    {
-            // Verifica a entrada do jogador apenas se não estiver pausado
-    if (!pausado)
-    {
-        // Avança para o próximo slide com a tecla esquerda do mouse ou ao clicar em qualquer lugar na tela
-        if (Input.GetMouseButtonDown(0))
+ {
+        // Verifica a entrada do jogador apenas se não estiver pausado
+        if (!pausado)
         {
-            AvancarSlide();
-
-            // Se chegou ao último slide, carrega a cena "Start"
-            if (indiceAtual >= slides.Length - 1)
+            // Avança para o próximo slide com a tecla esquerda do mouse ou ao clicar em qualquer lugar na tela
+            if (Input.GetMouseButtonDown(0))
             {
-                CarregarCenaStart();
+                AvancarSlide();
+
+                // Se chegou ao último slide, carrega a cena "Start"
+                if (indiceAtual >= slides.Length - 1)
+                {
+                    CarregarCenaStart();
+                }
             }
         }
-    }
 
-    // Pausa ou continua a sequência com a barra de espaço
-    if (Input.GetKeyDown(KeyCode.Space))
-    {
-        pausado = !pausado;
-    }
+        // Pausa ou continua a sequência com a barra de espaço
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            pausado = !pausado;
+        }
     }
 
     void AvancarSlide()
