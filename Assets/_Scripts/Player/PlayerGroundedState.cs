@@ -28,7 +28,7 @@ public class PlayerGroundedState : PlayerState
             stateMachine.ChangeState(player.PrimaryAttack);
 
         // Carregando o tiro...
-        if (Input.GetKey(KeyCode.F) && player.abilities.canUseBow)
+        if (Input.GetKey(KeyCode.Mouse0) && player.abilities.canUseBow)
         {
             player.isCharging = true;
             if (player.isCharging)
@@ -37,7 +37,7 @@ public class PlayerGroundedState : PlayerState
             }
         }
 
-        if (Input.GetKeyUp(KeyCode.F) && player.abilities.canUseBow)
+        if (Input.GetKeyUp(KeyCode.Mouse0) && player.abilities.canUseBow)
         {
             stateMachine.ChangeState(player.ShotState);
         }
