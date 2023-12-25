@@ -238,39 +238,14 @@ public class GameManager : MonoBehaviour
         UpdateKeyCounter();
     }
 
-
-//useless
-    public void GetPowerUp(int type)
+    public void AdicionaRobo()
     {
-        switch (type)
+        if(enemyCounter < enemyTotal)
         {
-            case 1:
-                powerUp_jump = true;
-                break;
-
-            case 2:
-                powerUp_super_jump = true;
-                break;
-
-            case 3:
-                powerUp_multitool = true;
-                break;
-
-            case 4:
-                powerUp_multitool_key = true;
-                break;
-
-            case 5:
-                powerUp_multitool_loader = true;
-                break;
-
-            case 6:
-                powerUp_multitool_bayoneta = true;
-                break;
-
-            default:
-                break;
+            enemyCounter++;
         }
 
+        UpdateRobotCounter();
     }
+
 }
