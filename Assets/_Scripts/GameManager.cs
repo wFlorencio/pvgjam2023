@@ -228,6 +228,16 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("level1");
     }
 
+    public void AdicionaChave()
+    {
+        if(signatureCounter < signatureTotal)
+        {
+            signatureCounter++;
+        }
+
+        UpdateKeyCounter();
+    }
+
 
 //useless
     public void GetPowerUp(int type)

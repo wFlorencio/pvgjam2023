@@ -41,10 +41,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6079034266401969875}
   - component: {fileID: 5839685018158905626}
-  - component: {fileID: 4603319455379302406}
-  - component: {fileID: 4133727426853162473}
   - component: {fileID: 6207626372285087377}
   - component: {fileID: 357081343408291557}
+  - component: {fileID: 4603319455379302406}
+  - component: {fileID: 4133727426853162473}
   - component: {fileID: 8181487284986179999}
   m_Layer: 7
   m_Name: Player
@@ -116,6 +116,38 @@ MonoBehaviour:
   isJumping: 0
   abilities: {fileID: 6207626372285087377}
   areaTransitionName: 
+--- !u!114 &6207626372285087377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3903958563065389431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1483bb62aaaf4c649a50ab50dd2aa2fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canDoubleJump: 0
+  canDash: 0
+  canGiveCombo: 0
+  canUseBow: 0
+--- !u!114 &357081343408291557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3903958563065389431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14a6944e215bcb44e97e33977d395bc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
+  maxHealth: 100
+  isDead: 0
+  currentHealth: 0
 --- !u!70 &4603319455379302406
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -178,38 +210,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &6207626372285087377
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3903958563065389431}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1483bb62aaaf4c649a50ab50dd2aa2fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canDoubleJump: 0
-  canDash: 0
-  canGiveCombo: 0
-  canUseBow: 0
---- !u!114 &357081343408291557
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3903958563065389431}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14a6944e215bcb44e97e33977d395bc7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 10
-  maxHealth: 100
-  isDead: 0
-  currentHealth: 0
 --- !u!61 &8181487284986179999
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -297,8 +297,8 @@ Camera:
   m_GameObject: {fileID: 7060551003721376067}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.11421621, g: 0.15051158, b: 0.20754719, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -322,7 +322,7 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 0
+  orthographic: 1
   orthographic size: 5
   m_Depth: 0
   m_CullingMask:
