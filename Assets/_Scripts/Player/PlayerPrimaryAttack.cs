@@ -5,9 +5,7 @@ using UnityEngine;
 
 public class PlayerPrimaryAttackState : PlayerState
 {
-
     private int comboCounter;
-
     private float lastTimeAttacked;
     private float comboWindow = 2;
 
@@ -20,23 +18,24 @@ public class PlayerPrimaryAttackState : PlayerState
         base.Enter();
         xInput = 0;
 
-        if (comboCounter > 2 || Time.time >= lastTimeAttacked + comboWindow)
-            comboCounter = 0;
+        //if (comboCounter > 2 || Time.time >= lastTimeAttacked + comboWindow)
+        //    comboCounter = 0;
 
+        /*
         if (player.IsGroundDetected())
         {
             player.anim.SetInteger("ComboCounter", 0);
         }
+        */
+
+        player.anim.SetInteger("ComboCounter", 0);
         
-
-
         float attackDir = player.facingDir;
         if (xInput != 0)
             attackDir = xInput;
 
-        if(player.abilities.canGiveCombo)
-            player.SetVelocity(player.attackMovement[comboCounter].x * attackDir, player.attackMovement[comboCounter].y);
-
+        //if(player.abilities.canGiveCombo)
+        //    player.SetVelocity(player.attackMovement[comboCounter].x * attackDir, player.attackMovement[comboCounter].y);
 
         stateTimer = .1f;
     }
@@ -47,7 +46,7 @@ public class PlayerPrimaryAttackState : PlayerState
 
         player.StartCoroutine("BusyFor", .15f);
 
-        comboCounter++;
+        //comboCounter++;
         lastTimeAttacked = Time.time;
     }
 
@@ -61,6 +60,5 @@ public class PlayerPrimaryAttackState : PlayerState
         if (triggerCalled)
             stateMachine.ChangeState(player.IdleState);
     }
-
 
 }

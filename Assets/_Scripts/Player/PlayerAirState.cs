@@ -32,8 +32,12 @@ public class PlayerAirState : PlayerState
         if (xInput != 0)
             player.SetVelocity(player.moveSpeed * 1f * xInput, rb.velocity.y);
 
-        if (Input.GetKeyDown(KeyCode.J))
-            stateMachine.ChangeState(player.PrimaryAttack);
+        if (Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.J))
+            {
+                Debug.Log("Comando executando");
+                stateMachine.ChangeState(player.PrimaryAttack);
+                 Debug.Log("Comando executado");
+            }
 
         if (Input.GetKeyDown(KeyCode.Space) && player.canDoubleJump && player.abilities.canDoubleJump)
         {

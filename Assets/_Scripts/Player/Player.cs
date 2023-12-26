@@ -90,12 +90,13 @@ public class Player : Entity
         StateMachine.Initialize(IdleState);
     }
 
+    
+
     protected override void Update()
     {
         base.Update();
         StateMachine.CurrentState.Update();
         //CheckForDashInput();
-
         // Debug.Log(StateMachine.CurrentState);
     }
 

@@ -225,6 +225,10 @@ public class GameManager : MonoBehaviour
         gameOverScreen.SetActive(false);
         timer = 3.0f;
         //SceneManager.LoadScene(currentSceneIndex);
+        enemyCounter =  0;
+        signatureCounter = 0;
+        UpdateRobotCounter();
+        UpdateKeyCounter();
         SceneManager.LoadScene("level1");
     }
 

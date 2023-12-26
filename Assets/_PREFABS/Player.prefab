@@ -62,7 +62,7 @@ Transform:
   m_GameObject: {fileID: 3903958563065389431}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -38.9, y: -3.79, z: 0}
+  m_LocalPosition: {x: -38.805, y: -3.5685, z: -1.055}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -128,10 +128,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1483bb62aaaf4c649a50ab50dd2aa2fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canDoubleJump: 0
-  canDash: 0
-  canGiveCombo: 0
-  canUseBow: 0
+  canDoubleJump: 1
+  canDash: 1
+  canGiveCombo: 1
+  canUseBow: 1
 --- !u!114 &357081343408291557
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,8 +180,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.55, y: -0.37}
-  m_Size: {x: 1.54, y: 3.34}
+  m_Offset: {x: 0.55, y: -0.2}
+  m_Size: {x: 1.22, y: 2.64}
   m_Direction: 0
 --- !u!50 &4133727426853162473
 Rigidbody2D:
@@ -403,7 +403,7 @@ Transform:
   m_GameObject: {fileID: 8625204385776288472}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.211, y: -0.131, z: 0}
+  m_LocalPosition: {x: 1.1, y: -0.297, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -434,7 +434,7 @@ Transform:
   m_GameObject: {fileID: 8880970565673136121}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.486, y: -1.837, z: 0}
+  m_LocalPosition: {x: 0.425, y: -1.394, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
